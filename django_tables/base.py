@@ -3,7 +3,7 @@ from collections import OrderedDict
 
 from django.http import Http404
 from django.core import paginator
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.text import capfirst
 
 import six
@@ -341,7 +341,7 @@ class BoundColumn(object):
 
     def __str__(self):
         s = self.column.verbose_name or self.name.replace('_', ' ')
-        return capfirst(force_text(s))
+        return capfirst(force_str(s))
 
     def as_html(self):
         pass
